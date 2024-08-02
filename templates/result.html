@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body bgcolor="#95d6ea">
+    <center>
+        <h1 style="margin-top: 50px;">Prediction Result</h1>
+        <p>Predicted Label: {{ prediction }}</p>
+        <br>
+        {% load static %}
+        {% if prediction == 'Cloudy' %}
+        <img src="{% static 'static/cloudy.jpg' %}" alt="">
+        {% elif prediction == 'Rainy' %}
+        <img src="{% static 'static/rain.jpg' %}" alt="">
+        {% elif prediction == 'Snowy' %}
+        <img src="{% static 'static/snow.jpg' %}" alt="">
+        {% else %}
+        <img src="{% static 'static/sun.jpg' %}" alt="">
+        {% endif %}
+        <br><br>
+        <a href="{% url 'home' %}">Go back to the form</a>
+    </center>
+</body>
+</html>

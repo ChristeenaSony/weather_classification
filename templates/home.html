@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Prediction Form</title>
+</head>
+<body bgcolor="#95d6ea">
+    <center>
+        <h1 style="margin-top: 50px;">Weather Prediction Form</h1>
+        <div style="padding-top: 30px;">
+            <form method="post" action="{% url 'predict_weather' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+    </center>
+</body>
+</html>
